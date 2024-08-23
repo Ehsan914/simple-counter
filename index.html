@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Counter</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="bg-img"></div>
+    <main>
+        <div class="wrapper">
+            <p class="counter"></p>
+            <p class="save-el">Previous Entry: </p>
+            <div class="item">
+                <a href="#" class="done" onclick = "myFunction()"  style="text-align: center;"><p>Count</p></a>
+                <a href="#" class="cancel" onclick="cancelFunc()" style="text-align: center;"><p>Save</p></a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
+<script>
+    let counter = 0, dash = 0;
+
+    document.querySelector('.counter').innerHTML = counter;
+
+    function add() {
+        counter++;
+        return counter;
+    }
+
+    function myFunction () {
+        document.querySelector('.counter').innerHTML = add();
+    }
+
+    function cancelFunc() {
+        if (dash == 3) {
+            let ind = document.querySelector('.save-el').textContent.indexOf(' - ');
+            let len = document.querySelector('.save-el').textContent.length;
+            let str = document.querySelector('.save-el').textContent.substr(0, 15) + document.querySelector('.save-el').textContent.slice(ind + 2, len);
+            console.log(str);
+            document.querySelector('.save-el').textContent = str;
+        } else if (dash < 3) dash++;
+        document.querySelector('.save-el').textContent += counter + ' - ';
+    }
+</script>
