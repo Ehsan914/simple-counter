@@ -19,7 +19,7 @@ body {
     background-image: url(../assets/Bg1.jpg);
     background-size: cover;
     background-position: center;
-    filter: grayscale(100%);
+    filter: grayscale(25%);
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -54,9 +54,9 @@ main::before {
     left: 50%;
     width: 0;
     height: 0;
-    opacity: .3;
+    -webkit-filter: blur(5px);
+    opacity: .5;
     background-color: #E7EEFC;
-    filter: grayscale(100%);
     border-radius: 50%;
     transition: all 0.3s ease;
     z-index: -1;
