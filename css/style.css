@@ -54,9 +54,9 @@ main::before {
     left: 50%;
     width: 0;
     height: 0;
-    filter: blur(2px);
-    opacity: .5;
+    opacity: .3;
     background-color: #E7EEFC;
+    filter: grayscale(100%);
     border-radius: 50%;
     transition: all 0.3s ease;
     z-index: -1;
