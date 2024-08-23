@@ -23,7 +23,7 @@ body {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    z-index: -1;
+    z-index: -3;
 }
 
 .wrapper {
@@ -37,6 +37,20 @@ body {
     border-radius: 3em;
     gap: 4.6em;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: #808080;
+    opacity: .5;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    z-index: -2;
+    top: 0;
+    left: 0;
 }
 
 .save-el {
@@ -54,8 +68,6 @@ main::before {
     left: 50%;
     width: 0;
     height: 0;
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
     opacity: .5;
     background-color: #E7EEFC;
     border-radius: 50%;
