@@ -21,7 +21,7 @@
             <p class="save-el">Previous Entry: </p>
             <div class="item">
                 <a href="#" class="done" onclick = "myFunction()"  style="text-align: center;"><p>Count</p></a>
-                <a href="#" class="cancel" onclick="cancelFunc()" style="text-align: center;"><p>Save</p></a>
+                <a href="#" class="cancel" onclick="saveFunc()" style="text-align: center;"><p>Save</p></a>
             </div>
         </div>
     </main>
@@ -42,7 +42,7 @@
         document.querySelector('.counter').innerHTML = add();
     }
 
-    function cancelFunc() {
+    function saveFunc() {
         if (dash == 3) {
             let ind = document.querySelector('.save-el').textContent.indexOf(' - ');
             let len = document.querySelector('.save-el').textContent.length;
@@ -51,5 +51,7 @@
             document.querySelector('.save-el').textContent = str;
         } else if (dash < 3) dash++;
         document.querySelector('.save-el').textContent += counter + ' - ';
+        counter = 0;
+        document.querySelector('.counter').innerHTML = counter;
     }
 </script>
